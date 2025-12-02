@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_athena_academy/sections/features/fff.dart';
 import 'package:site_athena_academy/sections/features/widgets/card_item.dart';
 
 class FeaturesSection extends StatefulWidget {
@@ -52,6 +53,8 @@ class _FeaturesSectionState extends State<FeaturesSection> {
             ),
           ],
         ),
+        const SizedBox(height: 40),
+        FeatureShowcase(),
       ],
     );
   }
