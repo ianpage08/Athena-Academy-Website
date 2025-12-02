@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/sections/header/header_buttons.dart';
-import 'package:site_athena_academy/sections/header/hero_section/hero_buttons.dart';
+
+import 'package:site_athena_academy/sections/hero_section/hero_buttons.dart';
 
 class HeroSection extends StatefulWidget {
   const HeroSection({super.key});

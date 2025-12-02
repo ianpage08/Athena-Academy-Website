@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:site_athena_academy/sections/challenges/challenge_section.dart';
 import 'package:site_athena_academy/sections/header/header_section.dart';
-import 'package:site_athena_academy/sections/header/hero_section/hero_section.dart';
+import 'package:site_athena_academy/sections/hero_section/hero_section.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -18,7 +19,14 @@ class _AppState extends State<App> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(children: [HeroSection()]),
+          child: Column(
+            children: [
+              HeroSection(),
+              Divider(),
+              const SizedBox(height: 20),
+              ChallengeSection(),
+            ],
+          ),
         ),
       ),
     );
