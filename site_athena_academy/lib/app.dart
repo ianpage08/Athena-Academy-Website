@@ -16,7 +16,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 208, 218, 223),
+      backgroundColor: const Color.fromARGB(255, 204, 204, 204),
       appBar: HeaderSection(),
       body: SingleChildScrollView(
         child: Padding(
