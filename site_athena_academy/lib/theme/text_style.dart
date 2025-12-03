@@ -32,3 +32,5 @@ class AthenaTextStyle {
     color: AthenaColors.textPrimary,
   );
 }
+
+// Radius padrão utilizado em botões e cartões
