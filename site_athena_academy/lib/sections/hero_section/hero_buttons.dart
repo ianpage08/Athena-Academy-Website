@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
 
 class HeroButtons extends StatelessWidget {
   const HeroButtons({super.key});
@@ -11,30 +12,30 @@ class HeroButtons extends StatelessWidget {
         ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(150, 50),
-            backgroundColor: Colors.blue,
+            backgroundColor: AthenaColors.accent,
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
           onPressed: () {},
-          label: const Text('Baixar App'),
+          label: const Text('Baixar App Demo'),
           icon: const Icon(Icons.download),
         ),
         const SizedBox(width: 16),
         ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(150, 50),
-            backgroundColor: const Color.fromARGB(255, 11, 15, 44),
-            foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
           onPressed: () {
             // Ação do botão 2
           },
-          label: const Text('Repositorio'),
+          label: const Text('Explorar Repositorio'),
           icon: const Icon(Icons.dock),
         ),
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
 import 'package:site_athena_academy/sections/challenges/challenge_section.dart';
 import 'package:site_athena_academy/sections/features/features_section.dart';
 import 'package:site_athena_academy/sections/header/header_section.dart';
@@ -16,11 +17,11 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 204, 204, 204),
+      backgroundColor: AthenaColors.primaryVariant,
       appBar: HeaderSection(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(0),
           child: Column(
             children: [
               HeroSection(),
