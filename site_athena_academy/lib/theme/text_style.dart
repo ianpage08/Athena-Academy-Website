@@ -10,20 +10,25 @@ class AthenaTextStyle {
     color: AthenaColors.textPrimary,
   );
 
-  static TextStyle heroTitle = TextStyle(
+  static TextStyle displayTitle = TextStyle(
     fontSize: 60,
     fontWeight: FontWeight.w300,
     color: AthenaColors.textPrimary,
   );
 
-  static TextStyle heroSubtitle = TextStyle(
+  static TextStyle subtitle = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w600,
     color: AthenaColors.textPrimary,
   );
 
-  static TextStyle heroDescription = TextStyle(
+  static TextStyle smallText = TextStyle(
     fontSize: 16,
     color: AthenaColors.textSecondary,
+  );
+  static TextStyle buttonText = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AthenaColors.textPrimary,
   );
 }
