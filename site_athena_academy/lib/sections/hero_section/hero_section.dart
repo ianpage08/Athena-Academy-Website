@@ -66,7 +66,7 @@ class _HeroSectionState extends State<HeroSection> {
           children: [
             Image.asset('assets/imagens/logo_icon.png', width: 180),
             const SizedBox(height: 12),
-            Text('ATHENA ACADEMY', style: AthenaTextStyle.heroTitle),
+            Text('ATHENA ACADEMY', style: AthenaTextStyle.display),
           ],
         ),
 
@@ -77,13 +77,13 @@ class _HeroSectionState extends State<HeroSection> {
             children: [
               TextSpan(
                 text: 'A plataforma educacional do futuro\n',
-                style: AthenaTextStyle.heroSubtitle,
+                style: AthenaTextStyle.subtitle,
               ),
               TextSpan(text: '\n'),
               TextSpan(
                 text:
                     'Uma plataforma moderna, intuitiva e feita para aproximar escolas,\nprofessores, alunos e pais.',
-                style: AthenaTextStyle.heroDescription,
+                style: AthenaTextStyle.small,
               ),
             ],
           ),
