@@ -9,18 +9,51 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
+    // Blur dinâmico para melhorar performance em mobile
+    final double blur = width < 900 ? 10 : 24;
+
     return Container(
       height: 72,
-
       child: ClipRRect(
+        borderRadius: BorderRadius.zero, // Fixo no topo
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
           child: Container(
-            decoration: BoxDecoration(),
+            decoration: BoxDecoration(
+              // Camada GLASS principal
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white.withOpacity(0.5), // brilho no topo
+                  Colors.white.withOpacity(0.10), // mais translúcido abaixo
+                ],
+              ),
+
+              // Borda inferior mais refinada
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.white.withOpacity(0.35),
+                  width: 1,
+                ),
+              ),
+
+              // Sombra leve (flutuação)
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 16,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // LOGO + TEXTO
                 Row(
                   children: [
                     const SizedBox(width: 32),
@@ -30,6 +63,7 @@ class HeaderSection extends StatelessWidget {
                   ],
                 ),
 
+                // BOTÕES
                 Row(
                   children: [
                     AthenaButton(
@@ -40,7 +74,6 @@ class HeaderSection extends StatelessWidget {
                       foregroundColor: Colors.white,
                     ),
                     const SizedBox(width: 12),
-
                     AthenaButton(
                       height: 40,
                       label: 'Explorar Repositório',

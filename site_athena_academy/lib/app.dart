@@ -19,15 +19,18 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(0, 18, 32, 58),
-
+      extendBodyBehindAppBar: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(72),
+        child: HeaderSection(),
+      ),
       body: AppBackground(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(0),
             child: Column(
               children: [
-                const HeaderSection(),
+                const SizedBox(height: 100),
                 HeroSection(),
 
                 ChallengeSection(),
