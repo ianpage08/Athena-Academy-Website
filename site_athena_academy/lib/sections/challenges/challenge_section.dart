@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/core/constants/colors.dart';
+
 import 'widgets/challenge_item.dart';
 
 class ChallengeSection extends StatelessWidget {

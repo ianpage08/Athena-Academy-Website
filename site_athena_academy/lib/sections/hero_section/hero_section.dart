@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/core/constants/colors.dart';
+
 import 'package:site_athena_academy/sections/hero_section/hero_buttons.dart';
 import 'package:site_athena_academy/theme/text_style.dart';
 
