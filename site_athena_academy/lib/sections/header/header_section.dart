@@ -1,19 +1,72 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/sections/header/header_buttons.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
+import 'package:site_athena_academy/widgets/button_ishovered.dart';
+import 'package:site_athena_academy/theme/text_style.dart';
 
-class HeaderSection extends StatelessWidget implements PreferredSizeWidget {
+class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
-  @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text('ATHENA ACADEMY'),
-      backgroundColor: const Color.fromARGB(255, 186, 181, 212),
+    return Container(
+      height: 72,
 
-      actions: [HeaderButtons()],
+      child: ClipRRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  AthenaColors.primary,
+                  AthenaColors.primaryVariant,
+                  AthenaColors.secondary.withOpacity(0.15),
+                ],
+                stops: const [0.0, 0.55, 1.5],
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    const SizedBox(width: 32),
+                    Image.asset('assets/imagens/logo_icon.png', width: 40),
+                    const SizedBox(width: 12),
+                    Text("ATHENA ACADEMY", style: AthenaTextStyle.headerTitle),
+                  ],
+                ),
+
+                Row(
+                  children: [
+                    AthenaButton(
+                      height: 40,
+                      label: 'Baixar App Demo',
+                      icon: Icons.download,
+                      backgroundColor: AthenaColors.accent,
+                      foregroundColor: Colors.white,
+                    ),
+                    const SizedBox(width: 12),
+
+                    AthenaButton(
+                      height: 40,
+                      label: 'Explorar Repositório',
+                      icon: Icons.dock,
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                    ),
+                    const SizedBox(width: 32),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

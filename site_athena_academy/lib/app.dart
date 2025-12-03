@@ -18,12 +18,13 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AthenaColors.primaryVariant,
-      appBar: HeaderSection(),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(0),
           child: Column(
             children: [
+              const HeaderSection(),
               HeroSection(),
               Divider(),
               const SizedBox(height: 20),
