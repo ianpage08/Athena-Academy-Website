@@ -16,18 +16,7 @@ class HeaderSection extends StatelessWidget {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
           child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  AthenaColors.primary,
-                  AthenaColors.primaryVariant,
-                  AthenaColors.secondary.withOpacity(0.15),
-                ],
-                stops: const [0.0, 0.55, 1.5],
-              ),
-            ),
+            decoration: BoxDecoration(),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

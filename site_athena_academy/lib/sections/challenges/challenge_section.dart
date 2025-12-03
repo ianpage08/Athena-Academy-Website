@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widgets/challenge_itens.dart';
-import 'widgets/solve_itens.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
+import 'widgets/challenge_item.dart';
 
 class ChallengeSection extends StatelessWidget {
   const ChallengeSection({super.key});
@@ -8,7 +8,7 @@ class ChallengeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFE3EAF0), // fundo premium
+      decoration: BoxDecoration(),
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 16),
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -22,14 +22,17 @@ class ChallengeSection extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.w800,
-                  color: Colors.black87,
+                  color: const Color.fromARGB(221, 255, 255, 255),
                 ),
               ),
               const SizedBox(height: 12),
               Text(
                 "Como os portais atuais falham  e como o Athena Academy resolve.",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.black54),
+                style: TextStyle(
+                  fontSize: 16,
+                  color: const Color.fromARGB(137, 255, 255, 255),
+                ),
               ),
               const SizedBox(height: 50),
 
@@ -83,15 +86,48 @@ class ChallengeSection extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
-              ChallengeItem(title: 'Sistemas lentos e instáveis'),
-              ChallengeItem(title: 'Interfaces confusas e ultrapassadas'),
-              ChallengeItem(title: 'Falta de informações claras e acessíveis'),
+              ChallengeItem(
+                title: 'Sistemas lentos e instáveis',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
+              ),
+              ChallengeItem(
+                title: 'Interfaces confusas e ultrapassadas',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
+              ),
+              ChallengeItem(
+                title: 'Falta de informações claras e acessíveis',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
+              ),
               ChallengeItem(
                 title: 'Dificuldade para professores registrarem dados',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
               ),
-              ChallengeItem(title: 'Design não adaptado ao mobile'),
-              ChallengeItem(title: 'Comunicação descentralizada'),
-              ChallengeItem(title: 'Falta de notificações'),
+              ChallengeItem(
+                title: 'Design não adaptado ao mobile',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
+              ),
+              ChallengeItem(
+                title: 'Comunicação descentralizada',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
+              ),
+              ChallengeItem(
+                title: 'Falta de notificações',
+                icon: Icons.close,
+                iconBg: Colors.red,
+                iconColor: const Color.fromARGB(255, 255, 195, 195),
+              ),
             ],
           ),
         ),
@@ -99,7 +135,6 @@ class ChallengeSection extends StatelessWidget {
     );
   }
 
-  // CARD 2 — SOLUÇÕES
   Widget _buildSolutionsCard() {
     return Card(
       elevation: 3,
@@ -128,12 +163,42 @@ class ChallengeSection extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
-              SolveItem(title: 'Desempenho otimizado para garantir rapidez'),
-              SolveItem(title: 'Centraliza toda a comunicação escolar'),
-              SolveItem(title: 'Simplifica o trabalho dos professores'),
-              SolveItem(title: 'Organiza a rotina dos alunos'),
-              SolveItem(title: 'Melhora a transparência para os pais'),
-              SolveItem(title: 'Facilita a gestão escolar'),
+              ChallengeItem(
+                title: 'Desempenho otimizado para garantir rapidez',
+                icon: Icons.check,
+                iconBg: Colors.greenAccent,
+                iconColor: const Color.fromARGB(255, 76, 99, 69),
+              ),
+              ChallengeItem(
+                title: 'Centraliza toda a comunicação escolar',
+                icon: Icons.check,
+                iconBg: Colors.greenAccent,
+                iconColor: const Color.fromARGB(255, 76, 99, 69),
+              ),
+              ChallengeItem(
+                title: 'Simplifica o trabalho dos professores',
+                icon: Icons.check,
+                iconBg: Colors.greenAccent,
+                iconColor: const Color.fromARGB(255, 76, 99, 69),
+              ),
+              ChallengeItem(
+                title: 'Organiza a rotina dos alunos',
+                icon: Icons.check,
+                iconBg: Colors.greenAccent,
+                iconColor: const Color.fromARGB(255, 76, 99, 69),
+              ),
+              ChallengeItem(
+                title: 'Melhora a transparência para os pais',
+                icon: Icons.check,
+                iconBg: Colors.greenAccent,
+                iconColor: const Color.fromARGB(255, 76, 99, 69),
+              ),
+              ChallengeItem(
+                title: 'Facilita a gestão escolar',
+                icon: Icons.check,
+                iconBg: Colors.greenAccent,
+                iconColor: const Color.fromARGB(255, 76, 99, 69),
+              ),
             ],
           ),
         ),

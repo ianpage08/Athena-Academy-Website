@@ -14,18 +14,7 @@ class _HeroSectionState extends State<HeroSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AthenaColors.primary,
-            AthenaColors.primaryVariant,
-            AthenaColors.secondary.withOpacity(0.15),
-          ],
-          stops: const [0.0, 0.5, 1.0],
-        ),
-      ),
+      decoration: BoxDecoration(),
       child: Padding(
         padding: const EdgeInsets.all(32.0),
         child: LayoutBuilder(
