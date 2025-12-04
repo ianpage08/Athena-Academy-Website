@@ -1,87 +1,89 @@
 import 'package:flutter/material.dart';
 import 'package:site_athena_academy/sections/ssj/widgets/card_item.dart';
 
-class Section extends StatefulWidget {
+class Section extends StatelessWidget {
   const Section({super.key});
 
   @override
-  State<Section> createState() => _SectionState();
-}
-
-class _SectionState extends State<Section> {
-  @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('O Futuro do Athena Academy', style: TextStyle(fontSize: 32)),
-        SizedBox(height: 16),
+        const SizedBox(height: 40),
+
+        // TÍTULO
+        Text(
+          'O Futuro do Athena Academy',
+          style: TextStyle(
+            fontSize: 34,
+            fontWeight: FontWeight.w800,
+            color: Colors.black.withOpacity(0.85),
+          ),
+        ),
+
+        const SizedBox(height: 10),
+
+        // SUBTÍTULO
         Text(
           'Novos recursos, mais automação e uma plataforma cada vez mais inteligente.',
-          style: TextStyle(fontSize: 18),
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 17, color: Colors.black.withOpacity(0.55)),
         ),
-        SizedBox(height: 20),
+
+        const SizedBox(height: 40),
+
+        // GRID FUTURISTA
         Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Cardw(
-                    icon: Icons.security,
-                    title:
-                        'Segurança avançada com autenticação de dois fatores',
-                  ),
-                  Cardw(icon: Icons.search, title: 'Login com Google e Apple'),
-                  Cardw(
-                    icon: Icons.contact_support,
-                    title: 'Portal web completo para todos os perfins',
-                  ),
-                  Cardw(
-                    icon: Icons.abc_outlined,
-                    title: 'Chat interno entre Professores, alunos e pais ',
-                  ),
-                ],
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Wrap(
+            spacing: 24,
+            runSpacing: 24,
+            alignment: WrapAlignment.center,
+            children: const [
+              Cardw(
+                icon: Icons.security,
+                title: 'Segurança avançada com autenticação de dois fatores',
               ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Cardw(
-                    icon: Icons.graphic_eq,
-                    title: 'Relatórios avançados e analises  de desempenho',
-                  ),
-                  Cardw(
-                    icon: Icons.money,
-                    title: 'Sistema Finaceiro integrado e automatizado',
-                  ),
-                  Cardw(
-                    icon: Icons.computer,
-                    title: 'avaliações online com correção automática',
-                  ),
-                  Cardw(
-                    icon: Icons.mobile_friendly,
-                    title: 'Aplicativo mobile para todas as plataformas',
-                  ),
-                ],
+              Cardw(icon: Icons.search, title: 'Login com Google e Apple'),
+              Cardw(
+                icon: Icons.devices,
+                title: 'Portal web completo para todos os perfis',
               ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Cardw(
-                    icon: Icons.calendar_month,
-                    title: 'Agenda inteligente com lebretes automaticos',
-                  ),
-                  Cardw(
-                    icon: Icons.integration_instructions,
-                    title: 'Integração com outras plataformas educacionais',
-                  ),
-                ],
+              Cardw(
+                icon: Icons.chat_bubble_outline,
+                title: 'Chat interno entre professores, alunos e pais',
+              ),
+
+              Cardw(
+                icon: Icons.analytics_outlined,
+                title: 'Relatórios avançados e análises de desempenho',
+              ),
+              Cardw(
+                icon: Icons.account_balance_wallet,
+                title: 'Sistema financeiro integrado e automatizado',
+              ),
+              Cardw(
+                icon: Icons.computer,
+                title: 'Avaliações online com correção automática',
+              ),
+              Cardw(
+                icon: Icons.phone_android,
+                title: 'Aplicativo mobile para todas as plataformas',
+              ),
+
+              Cardw(
+                icon: Icons.calendar_month,
+                title: 'Agenda inteligente com lembretes automáticos',
+              ),
+              Cardw(
+                icon: Icons.hub,
+                title: 'Integração com outras plataformas educacionais',
               ),
             ],
           ),
         ),
+
+        const SizedBox(height: 50),
       ],
     );
   }
