@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/challenge_item.dart';
+import 'widgets/challenge_solve_item.dart';
 
 class ChallengeSection extends StatelessWidget {
   const ChallengeSection({super.key});
