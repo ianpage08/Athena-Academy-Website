@@ -7,57 +7,92 @@ class ChallengeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Desafios dos Portais Atuais",
-          style: TextStyle(
-            fontSize: 36,
-            fontWeight: FontWeight.w800,
-            color: Colors.black87,
-          ),
-        ),
-        const SizedBox(height: 8),
-
-        // linha estilizada
-        Container(
-          width: 160,
-          height: 2,
-          decoration: BoxDecoration(color: AthenaColors.primaryUltraLight),
-        ),
-
-        const SizedBox(height: 20),
-
-        Text(
-          "Principais problemas enfrentados hoje por escolas, "
-          "professores, alunos e responsáveis.",
-          style: TextStyle(fontSize: 16, color: Colors.black54, height: 1.4),
-        ),
-
-        const SizedBox(height: 40),
-
-        // Lista de desafios
-        Wrap(
-          spacing: 60,
-          runSpacing: 50,
-          children: const [
-            ChallengeBadge(number: 1, text: "Sistemas lentos e instáveis"),
-            ChallengeBadge(
-              number: 2,
-              text: "Interfaces confusas e ultrapassadas",
+    return SizedBox(
+      width: 700,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Desafios dos Portais Atuais",
+            style: TextStyle(
+              fontSize: 36,
+              fontWeight: FontWeight.w800,
+              color: Colors.black87,
             ),
+          ),
+          const SizedBox(height: 8),
 
-            ChallengeBadge(number: 3, text: "Falta de informações claras"),
-            ChallengeBadge(number: 4, text: "Dificuldade de registro de dados"),
+          // linha estilizada
+          Container(
+            width: 160,
+            height: 2,
+            decoration: BoxDecoration(color: AthenaColors.primaryUltraLight),
+          ),
 
-            ChallengeBadge(number: 5, text: "Design não adaptado ao mobile"),
-            ChallengeBadge(number: 6, text: "Comunicação descentralizada"),
+          const SizedBox(height: 20),
 
-            ChallengeBadge(number: 7, text: "Falta de notificações"),
-          ],
-        ),
-      ],
+          Text(
+            "Principais problemas enfrentados hoje por escolas, "
+            "professores, alunos e responsáveis.",
+            style: TextStyle(fontSize: 16, color: Colors.black54, height: 1.4),
+          ),
+
+          const SizedBox(height: 40),
+
+          // Lista de desafios
+          Wrap(
+            spacing: 60,
+            runSpacing: 50,
+            children: const [
+              ChallengeBadge(
+                number: 1,
+                text: "Sistemas lentos e instáveis",
+                description:
+                    'Causam atrasos, travamentos\ne prejudicam a experiência dos usuários.',
+              ),
+              ChallengeBadge(
+                number: 2,
+                text: "Interfaces confusas e ultrapassadas",
+                description:
+                    'Dificultam a navegação e o\nacesso às informações essenciais.',
+              ),
+
+              ChallengeBadge(
+                number: 3,
+                text: "Falta de informações claras",
+                description:
+                    'Usuários não encontram dados importantes\ncom rapidez e precisão.',
+              ),
+              ChallengeBadge(
+                number: 4,
+                text: "Dificuldade de registro de dados",
+                description:
+                    'Professores perdem tempo com\nprocessos manuais e pouco intuitivos.',
+              ),
+
+              ChallengeBadge(
+                number: 5,
+                text: "Design não adaptado ao mobile",
+                description:
+                    'Prejudica o uso em celulares, onde\na maior parte acessa o portal.',
+              ),
+              ChallengeBadge(
+                number: 6,
+                text: "Comunicação descentralizada",
+                description:
+                    'Mensagens e avisos ficam espalhados\nem vários canais sem integração.',
+              ),
+
+              ChallengeBadge(
+                number: 7,
+                text: "Falta de notificações",
+                description:
+                    'Usuários perdem prazos e\ninformações importantes.',
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

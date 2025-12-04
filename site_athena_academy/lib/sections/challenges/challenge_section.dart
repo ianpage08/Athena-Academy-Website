@@ -26,7 +26,7 @@ class ChallengeSection extends StatelessWidget {
 
                   children: [
                     const SizedBox(width: 100),
-                    Expanded(flex: 1, child: ChallengeText()),
+                    Expanded(flex: 2, child: ChallengeText()),
 
                     Expanded(flex: 1, child: _buildLeftImage()),
                   ],

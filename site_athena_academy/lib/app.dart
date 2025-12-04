@@ -19,7 +19,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 177, 177, 177),
+      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(72),

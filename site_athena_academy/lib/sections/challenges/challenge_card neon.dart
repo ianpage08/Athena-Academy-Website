@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/sections/challenges/challenge_text.dart';
+
 
 class NeonChallengeCard extends StatelessWidget {
   const NeonChallengeCard({super.key});
