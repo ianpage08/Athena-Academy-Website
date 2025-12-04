@@ -6,12 +6,17 @@ class ChallengeBadge extends StatelessWidget {
   final String text;
   final String description;
 
-  const ChallengeBadge({super.key, required this.number, required this.text, this.description = ''});
+  const ChallengeBadge({
+    super.key,
+    required this.number,
+    required this.text,
+    this.description = '',
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 370,
+      width: 400,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -55,10 +60,7 @@ class ChallengeBadge extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 description,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.black54,
-                ),
+                style: const TextStyle(fontSize: 14, color: Colors.black54),
               ),
             ],
           ),

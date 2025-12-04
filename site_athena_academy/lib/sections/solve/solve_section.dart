@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
+import 'package:site_athena_academy/sections/solve/solve_text.dart';
 import 'package:site_athena_academy/theme/padding.dart';
 
 class SolveSection extends StatefulWidget {
@@ -18,11 +20,16 @@ class _SolveSectionState extends State<SolveSection> {
           final bool isMobile = constraints.maxWidth < 900;
           return isMobile
               ? Column(children: [])
-              : Row(
-                  children: [
-                    Expanded(flex: 1, child: Container()),
-                    Expanded(flex: 1, child: Container()),
-                  ],
+              : Container(
+                  padding: AthenaPadding.all12,
+                  decoration: AthenaColors.prismGlass,
+                  child: Row(
+                    children: [
+                      Expanded(flex: 1, child: _buildImage()),
+                      Expanded(flex: 1, child: SolveText()),
+                      const SizedBox(width: 80),
+                    ],
+                  ),
                 );
         },
       ),
@@ -31,7 +38,7 @@ class _SolveSectionState extends State<SolveSection> {
 
   Widget _buildImage() {
     return Center(
-      child: Image.asset('assets/imagens/icone_challenge_3d.png', width: 420),
+      child: Image.asset('assets/imagens/icon_solve_3d.png', width: 420),
     );
   }
 }
