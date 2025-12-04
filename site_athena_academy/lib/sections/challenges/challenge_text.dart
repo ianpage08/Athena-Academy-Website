@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/sections/challenges/widgets/challenge_solve_item.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
+import 'package:site_athena_academy/sections/challenges/widgets/challenge_badge.dart';
 
 class ChallengeText extends StatelessWidget {
   const ChallengeText({super.key});
@@ -10,61 +11,51 @@ class ChallengeText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Os Desafios Atuais dos Portais',
+          "Desafios dos Portais Atuais",
           style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
+            fontSize: 36,
+            fontWeight: FontWeight.w800,
             color: Colors.black87,
           ),
         ),
-        const SizedBox(height: 12),
-        Text(
-          'Uma visão clara dos principais problemas enfrentados por escolas, professores, alunos e responsáveis.',
-          style: TextStyle(fontSize: 15, color: Colors.black54),
-        ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 8),
 
-        ChallengeItem(
-          title: 'Sistemas lentos e instáveis',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
+        // linha estilizada
+        Container(
+          width: 160,
+          height: 2,
+          decoration: BoxDecoration(color: AthenaColors.primaryUltraLight),
         ),
-        ChallengeItem(
-          title: 'Interfaces confusas e ultrapassadas',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
+
+        const SizedBox(height: 20),
+
+        Text(
+          "Principais problemas enfrentados hoje por escolas, "
+          "professores, alunos e responsáveis.",
+          style: TextStyle(fontSize: 16, color: Colors.black54, height: 1.4),
         ),
-        ChallengeItem(
-          title: 'Falta de informações claras e acessíveis',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
-        ),
-        ChallengeItem(
-          title: 'Dificuldade para professores registrarem dados',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
-        ),
-        ChallengeItem(
-          title: 'Design não adaptado ao mobile',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
-        ),
-        ChallengeItem(
-          title: 'Comunicação descentralizada',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
-        ),
-        ChallengeItem(
-          title: 'Falta de notificações',
-          icon: Icons.close,
-          iconBg: Colors.red,
-          iconColor: const Color.fromARGB(255, 255, 195, 195),
+
+        const SizedBox(height: 40),
+
+        // Lista de desafios
+        Wrap(
+          spacing: 60,
+          runSpacing: 50,
+          children: const [
+            ChallengeBadge(number: 1, text: "Sistemas lentos e instáveis"),
+            ChallengeBadge(
+              number: 2,
+              text: "Interfaces confusas e ultrapassadas",
+            ),
+
+            ChallengeBadge(number: 3, text: "Falta de informações claras"),
+            ChallengeBadge(number: 4, text: "Dificuldade de registro de dados"),
+
+            ChallengeBadge(number: 5, text: "Design não adaptado ao mobile"),
+            ChallengeBadge(number: 6, text: "Comunicação descentralizada"),
+
+            ChallengeBadge(number: 7, text: "Falta de notificações"),
+          ],
         ),
       ],
     );

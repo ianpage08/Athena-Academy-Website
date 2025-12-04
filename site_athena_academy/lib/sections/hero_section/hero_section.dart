@@ -13,9 +13,9 @@ class HeroSection extends StatelessWidget {
         children: [
           /// 🔮 Camada de efeitos IA
           const HeroBackground(),
+          const HeroCard(),
 
           /// ❄ Card principal com glass + conteúdo
-          const HeroCard(),
         ],
       ),
     );

@@ -9,7 +9,7 @@ class HeroBackground extends StatelessWidget {
     return Positioned.fill(
       child: Stack(
         children: [
-          /// 🟣 Blob lilás (esquerda)
+          // Blob lilás (esquerda)
           Positioned(
             top: -120,
             left: -80,
@@ -19,7 +19,7 @@ class HeroBackground extends StatelessWidget {
             ),
           ),
 
-          /// 🔵 Blob azul (direita)
+          // Blob azul (direita)
           Positioned(
             bottom: -150,
             right: -120,
@@ -29,7 +29,7 @@ class HeroBackground extends StatelessWidget {
             ),
           ),
 
-          /// 🔮 Glow difuso orgânico (esquerda)
+          // Glow difuso orgânico (esquerda)
           Positioned(
             top: 160,
             left: -40,
@@ -39,7 +39,7 @@ class HeroBackground extends StatelessWidget {
             ),
           ),
 
-          /// 💠 Glow difuso secundário (harmonização)
+          // Glow difuso secundário (harmonização)
           Positioned(
             top: 280,
             left: 200,
@@ -54,7 +54,7 @@ class HeroBackground extends StatelessWidget {
   }
 }
 
-/// 🌀 Blob grande com blur suave
+// Blob grande com blur suave
 class _Blob extends StatelessWidget {
   final double size;
   final Color color;
@@ -70,7 +70,7 @@ class _Blob extends StatelessWidget {
         shape: BoxShape.circle,
         color: color,
         boxShadow: [
-          /// efeito de “volume”
+          // efeito de “volume”
           BoxShadow(
             color: color,
             blurRadius: 180,
@@ -82,7 +82,7 @@ class _Blob extends StatelessWidget {
   }
 }
 
-/// 🔮 Glow orgânico difuso
+// Glow orgânico difuso
 class _DiffuseGlow extends StatelessWidget {
   final double size;
   final Color color;

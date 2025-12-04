@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:site_athena_academy/sections/hero_section/hero_mockoup.dart';
 import 'hero_text.dart';
 
-
 class HeroCard extends StatelessWidget {
   const HeroCard({super.key});
 
@@ -24,6 +23,8 @@ class HeroCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Expanded(flex: mobile ? 0 : 1, child: const HeroMockup()),
+
                 /// Texto
                 Expanded(
                   flex: mobile ? 0 : 1,
@@ -37,10 +38,6 @@ class HeroCard extends StatelessWidget {
                 ),
 
                 /// Mockup flutuando (IA MAX)
-                Expanded(
-                  flex: mobile ? 0 : 1,
-                  child: const HeroMockup(),
-                ),
               ],
             );
           },
@@ -56,10 +53,7 @@ final BoxDecoration _prismGlass = BoxDecoration(
   color: Colors.white.withOpacity(0.10),
 
   /// Borda luminosa prismática
-  border: Border.all(
-    color: Colors.white.withOpacity(0.28),
-    width: 1.2,
-  ),
+  border: Border.all(color: Colors.white.withOpacity(0.28), width: 1.2),
 
   /// Sombra premium IA
   boxShadow: [
@@ -74,9 +68,6 @@ final BoxDecoration _prismGlass = BoxDecoration(
   gradient: LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [
-      Colors.white.withOpacity(0.25),
-      Colors.white.withOpacity(0.08),
-    ],
+    colors: [Colors.white.withOpacity(0.25), Colors.white.withOpacity(0.08)],
   ),
 );
