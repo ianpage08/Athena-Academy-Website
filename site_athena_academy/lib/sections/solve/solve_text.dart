@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/core/constants/colors.dart';
+
 import 'package:site_athena_academy/sections/challenges/widgets/challenge_badge.dart';
 
 class SolveText extends StatelessWidget {
