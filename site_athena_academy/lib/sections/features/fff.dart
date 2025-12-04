@@ -11,21 +11,21 @@ class FeatureShowcase extends StatelessWidget {
           reverse: false,
           title: "Organização clara para os alunos",
           description:
-              "Atividades, conteúdos, notas, comunicados e presença ficam organizados em uma interface moderna, rápida e intuitiva. A navegação simples reduz estresse, melhora o foco nos estudos e deixa o dia a dia mais leve.",
+              "Atividades, conteúdos, notas, comunicados e presença ficam organizados em uma interface moderna e intuitiva.\n\nA navegação rápida reduz estresse, melhora o foco nos estudos e torna o dia a dia mais leve.",
           imagePath: "assets/imagens/tela_admin.png",
         ),
         _buildFeatureBlock(
           reverse: true,
           title: "Produtividade total para professores",
           description:
-              "Registrar presença com 1 toque, publicar conteúdos, enviar atividades, lançar notas e acompanhar entregas se torna um processo fluido e rápido. Menos tempo clicando em menus confusos e mais tempo fazendo o que realmente importa: ensinar.",
+              "Registrar presença com 1 toque, enviar conteúdos, lançar notas e acompanhar entregas se torna fluido e eficiente.\n\nMenos tempo perdido em menus confusos — mais tempo focado em ensinar.",
           imagePath: "assets/imagens/tela_admin.png",
         ),
         _buildFeatureBlock(
           reverse: false,
           title: "Gestão completa da escola",
           description:
-              "O administrador controla tudo de forma centralizada e eficiente Turmas, alunos, professores, calendário, comunicados, exercícios e presença ficam integrados em um único painel inteligente. A gestão escolar deixa de ser burocrática e se torna clara, organizada e altamente produtiva.",
+              "Turmas, alunos, professores, calendário, comunicados, atividades e presença ficam centralizados em um painel inteligente.\n\nA gestão deixa de ser burocrática e passa a ser organizada, rápida e altamente produtiva.",
           imagePath: "assets/imagens/tela_admin.png",
         ),
       ],
@@ -38,22 +38,35 @@ class FeatureShowcase extends StatelessWidget {
     required String description,
     required String imagePath,
   }) {
-    final textBlock = SizedBox(
-      width: 600,
+    final textBlock = Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              title,
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ShaderMask(
+              shaderCallback: (bounds) => const LinearGradient(
+                colors: [Color(0xFF6A95FF), Color(0xFF9ED2FF)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ).createShader(bounds),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 34,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                ),
+              ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 14),
             Text(
               description,
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+              style: TextStyle(
+                fontSize: 17,
+                height: 1.55,
+                color: Colors.white.withOpacity(0.78),
+              ),
             ),
           ],
         ),
@@ -62,15 +75,45 @@ class FeatureShowcase extends StatelessWidget {
 
     final imageBlock = Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Image.asset(imagePath, height: 600),
+        padding: const EdgeInsets.all(40),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF6A95FF).withOpacity(0.35),
+                blurRadius: 40,
+                spreadRadius: 5,
+                offset: const Offset(0, 18),
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(22),
+            child: Image.asset(imagePath, height: 500, fit: BoxFit.contain),
+          ),
+        ),
       ),
     );
 
-    return SizedBox(
-      width: 1500,
-      child: Row(
-        children: reverse ? [imageBlock, textBlock] : [textBlock, imageBlock],
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 50),
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        gradient: LinearGradient(
+          colors: [
+            Colors.white.withOpacity(0.05),
+            Colors.white.withOpacity(0.02),
+          ],
+        ),
+        border: Border.all(color: Colors.white.withOpacity(0.08), width: 1.2),
+      ),
+      child: SizedBox(
+        width: 1500,
+        child: Row(
+          children: reverse ? [imageBlock, textBlock] : [textBlock, imageBlock],
+        ),
       ),
     );
   }
