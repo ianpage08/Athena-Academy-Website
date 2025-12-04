@@ -6,7 +6,7 @@ import 'package:site_athena_academy/sections/header/header_section.dart';
 import 'package:site_athena_academy/sections/hero_section/hero_section.dart';
 import 'package:site_athena_academy/sections/ssj/section.dart';
 
-import 'package:site_athena_academy/theme/backgroud.dart';
+
 
 class App extends StatefulWidget {
   const App({super.key});
