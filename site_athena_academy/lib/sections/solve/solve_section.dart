@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/core/constants/colors.dart';
+
 import 'package:site_athena_academy/sections/solve/solve_text.dart';
 import 'package:site_athena_academy/theme/padding.dart';
 import 'package:site_athena_academy/widgets/glass_container.dart';
