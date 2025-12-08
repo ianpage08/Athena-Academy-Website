@@ -17,16 +17,22 @@ class ChallengeText extends StatelessWidget {
             style: TextStyle(
               fontSize: 36,
               fontWeight: FontWeight.w800,
-              color: Colors.black87,
+              color: const Color.fromARGB(255, 255, 255, 255),
             ),
           ),
           const SizedBox(height: 8),
 
           // linha estilizada
           Container(
-            width: 160,
-            height: 2,
-            decoration: BoxDecoration(color: AthenaColors.primaryUltraLight),
+            width: 260,
+            height: 3,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.white.withOpacity(0.85), AthenaColors.accent],
+              ),
+            ),
           ),
 
           const SizedBox(height: 20),
@@ -34,7 +40,11 @@ class ChallengeText extends StatelessWidget {
           Text(
             "Principais problemas enfrentados hoje por escolas, "
             "professores, alunos e responsáveis.",
-            style: TextStyle(fontSize: 16, color: Colors.black54, height: 1.4),
+            style: TextStyle(
+              fontSize: 16,
+              color: const Color.fromARGB(213, 255, 255, 255),
+              height: 1.4,
+            ),
           ),
 
           const SizedBox(height: 40),

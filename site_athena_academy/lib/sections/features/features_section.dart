@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:site_athena_academy/sections/features/widgets/card_item.dart';
 
-import 'package:site_athena_academy/sections/features/fff.dart';
+import 'package:site_athena_academy/sections/features/mockops.dart';
 
 class FeaturesSection extends StatelessWidget {
   const FeaturesSection({super.key});
@@ -25,14 +25,13 @@ class FeaturesSection extends StatelessWidget {
 
         const Text(
           'Ferramentas projetadas para elevar a experiência escolar ao próximo nível',
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.white70,
-          ),
+          style: TextStyle(fontSize: 18, color: Colors.white70),
           textAlign: TextAlign.center,
         ),
 
         const SizedBox(height: 50),
+        FeatureShowcase(),
+        const SizedBox(height: 60),
 
         Wrap(
           spacing: 32,
@@ -65,10 +64,6 @@ class FeaturesSection extends StatelessWidget {
             ),
           ],
         ),
-
-        const SizedBox(height: 60),
-
-        FeatureShowcase(),
       ],
     );
   }

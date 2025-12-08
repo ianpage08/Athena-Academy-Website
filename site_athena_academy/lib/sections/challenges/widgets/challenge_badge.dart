@@ -18,19 +18,21 @@ class ChallengeBadge extends StatelessWidget {
     return SizedBox(
       width: 400,
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // BADGE NUMERADO
           Container(
-            width: 50,
-            height: 50,
+            width: 52,
+            height: 52,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               gradient: AthenaColors.accentGradient,
               boxShadow: [
                 BoxShadow(
-                  color: AthenaColors.accent.withOpacity(0.4),
-                  blurRadius: 8,
-                  spreadRadius: 1,
+                  color: AthenaColors.accent.withOpacity(0.35),
+                  blurRadius: 18,
+                  spreadRadius: 2,
+                  offset: const Offset(0, 4),
                 ),
               ],
             ),
@@ -45,24 +47,38 @@ class ChallengeBadge extends StatelessWidget {
               ),
             ),
           ),
+
           const SizedBox(width: 16),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                text,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black87,
+
+          // TEXTO
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // TÍTULO
+                Text(
+                  text,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    height: 1.2,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                description,
-                style: const TextStyle(fontSize: 14, color: Colors.black54),
-              ),
-            ],
+
+                const SizedBox(height: 6),
+
+                // DESCRIÇÃO
+                Text(
+                  description,
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.45,
+                    color: Colors.white.withOpacity(0.75),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_athena_academy/core/constants/colors.dart';
 
 import 'package:site_athena_academy/sections/challenges/widgets/challenge_badge.dart';
 
@@ -18,17 +19,21 @@ class SolveText extends StatelessWidget {
             style: TextStyle(
               fontSize: 36,
               fontWeight: FontWeight.w800,
-              color: Colors.black87,
+              color: const Color.fromARGB(221, 255, 255, 255),
             ),
           ),
           const SizedBox(height: 8),
 
           // linha estilizada
           Container(
-            width: 160,
-            height: 2,
+            width: 260,
+            height: 3,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 62, 26, 224),
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [AthenaColors.accent, Colors.white.withOpacity(0.85)],
+              ),
             ),
           ),
 
@@ -37,7 +42,11 @@ class SolveText extends StatelessWidget {
           Text(
             "Principais problemas enfrentados hoje por escolas, "
             "professores, alunos e responsáveis.",
-            style: TextStyle(fontSize: 16, color: Colors.black54, height: 1.4),
+            style: TextStyle(
+              fontSize: 16,
+              color: const Color.fromARGB(239, 255, 255, 255),
+              height: 1.4,
+            ),
           ),
 
           const SizedBox(height: 40),
@@ -88,9 +97,9 @@ class SolveText extends StatelessWidget {
 
               ChallengeBadge(
                 number: 7,
-                text: "Falta de notificações",
+                text: "Envio inteligente de notificações",
                 description:
-                    'Usuários perdem prazos e\ninformações importantes.',
+                    'Pais, alunos e professores recebem\nalertas automáticos e personalizados.',
               ),
             ],
           ),

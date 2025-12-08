@@ -9,7 +9,7 @@ class AppBackground extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/imagens/backgrounds/bg_purple1.jpg'),
+          image: AssetImage('assets/imagens/backgrounds/bg_purple_2.png'),
           fit: BoxFit.cover,
         ),
       ),
