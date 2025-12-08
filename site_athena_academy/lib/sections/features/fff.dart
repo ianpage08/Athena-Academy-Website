@@ -12,21 +12,21 @@ class FeatureShowcase extends StatelessWidget {
           title: "Organização clara para os alunos",
           description:
               "Atividades, conteúdos, notas, comunicados e presença ficam organizados em uma interface moderna e intuitiva.\n\nA navegação rápida reduz estresse, melhora o foco nos estudos e torna o dia a dia mais leve.",
-          imagePath: "assets/imagens/tela_admin.png",
+          imagePath: "assets/imagens/celular_34.png",
         ),
         _buildFeatureBlock(
           reverse: true,
           title: "Produtividade total para professores",
           description:
               "Registrar presença com 1 toque, enviar conteúdos, lançar notas e acompanhar entregas se torna fluido e eficiente.\n\nMenos tempo perdido em menus confusos — mais tempo focado em ensinar.",
-          imagePath: "assets/imagens/tela_admin.png",
+          imagePath: "assets/imagens/celular_3.png",
         ),
         _buildFeatureBlock(
           reverse: false,
           title: "Gestão completa da escola",
           description:
               "Turmas, alunos, professores, calendário, comunicados, atividades e presença ficam centralizados em um painel inteligente.\n\nA gestão deixa de ser burocrática e passa a ser organizada, rápida e altamente produtiva.",
-          imagePath: "assets/imagens/tela_admin.png",
+          imagePath: "assets/imagens/celular_2.png",
         ),
       ],
     );
@@ -81,9 +81,9 @@ class FeatureShowcase extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF6A95FF).withOpacity(0.35),
-                blurRadius: 40,
-                spreadRadius: 5,
+                color: const Color(0xFF6A95FF).withOpacity(0.1),
+                blurRadius: 60,
+                spreadRadius: 1,
                 offset: const Offset(0, 18),
               ),
             ],

@@ -12,6 +12,7 @@ class SolveText extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+          const SizedBox(height: 40),
           Text(
             "Soluções Oferecidas pelo Athena Academy",
             style: TextStyle(
@@ -93,6 +94,7 @@ class SolveText extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 40),
         ],
       ),
     );

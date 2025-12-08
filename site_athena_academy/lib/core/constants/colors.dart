@@ -126,7 +126,7 @@ class AthenaColors {
       ),
     ],
 
-    /// gradiente cristal (diagonal) — muito moderno
+    
     gradient: LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,

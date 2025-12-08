@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:site_athena_academy/core/constants/colors.dart';
 import 'package:site_athena_academy/sections/solve/solve_text.dart';
 import 'package:site_athena_academy/theme/padding.dart';
+import 'package:site_athena_academy/widgets/glass_container.dart';
 
 class SolveSection extends StatefulWidget {
   const SolveSection({super.key});
@@ -20,9 +21,7 @@ class _SolveSectionState extends State<SolveSection> {
           final bool isMobile = constraints.maxWidth < 900;
           return isMobile
               ? Column(children: [])
-              : Container(
-                  padding: AthenaPadding.all12,
-                  decoration: AthenaColors.prismGlass,
+              : GlassBox(
                   child: Row(
                     children: [
                       Expanded(flex: 1, child: _buildImage()),
