@@ -21,7 +21,7 @@ class _AppState extends State<App> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(72),
+        preferredSize: Size.fromHeight(90),
         child: HeaderSection(),
       ),
       body: AppBackground(

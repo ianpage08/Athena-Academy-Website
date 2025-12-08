@@ -11,11 +11,10 @@ class HeaderSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    // Blur dinâmico para melhorar performance em mobile
-    final double blur = width < 900 ? 10 : 24;
+    final double blur = width < 900 ? 12 : 20;
 
     return Container(
-      height: 72,
+      height: 90,
       child: ClipRRect(
         borderRadius: BorderRadius.zero, // Fixo no topo
         child: BackdropFilter(
@@ -27,8 +26,8 @@ class HeaderSection extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.white.withOpacity(0.5), // brilho no topo
-                  Colors.white.withOpacity(0.10), // mais translúcido abaixo
+                  Colors.white.withOpacity(0.22), // brilho no topo
+                  Colors.white.withOpacity(0.06), // mais translúcido abaixo
                 ],
               ),
 
@@ -36,7 +35,7 @@ class HeaderSection extends StatelessWidget {
               border: Border(
                 bottom: BorderSide(
                   color: Colors.white.withOpacity(0.35),
-                  width: 1,
+                  width: 0.7,
                 ),
               ),
 
@@ -57,7 +56,7 @@ class HeaderSection extends StatelessWidget {
                 Row(
                   children: [
                     const SizedBox(width: 32),
-                    Image.asset('assets/imagens/logo_icon.png', width: 40),
+                    Image.asset('assets/imagens/logo_white.png', width: 40),
                     const SizedBox(width: 12),
                     Text("ATHENA ACADEMY", style: AthenaTextStyle.headerTitle),
                   ],
