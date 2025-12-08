@@ -10,27 +10,35 @@ class HeroText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        /// Logo + nome
         Column(
           children: [
-            Image.asset('assets/imagens/logo_icon.png', width: 180),
-            const SizedBox(height: 12),
+            Container(
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 22,
+                    spreadRadius: -4,
+                    color: Color.fromARGB(22, 255, 255, 255),
+                  ),
+                ],
+              ),
+              child: Image.asset('assets/imagens/logo_white.png', width: 140),
+            ),
+            const SizedBox(height: 16),
             Text('ATHENA ACADEMY', style: AthenaTextStyle.display),
           ],
         ),
 
         const SizedBox(height: 32),
 
-        // Subtítulo
         Text(
           'A plataforma educacional do futuro',
           textAlign: TextAlign.center,
           style: AthenaTextStyle.subtitle,
         ),
 
-        const SizedBox(height: 16),
+        const SizedBox(height: 6),
 
-        // Descrição
         Text(
           'Uma plataforma moderna, intuitiva e feita para aproximar escolas,\n'
           'professores, alunos e pais.',
@@ -38,10 +46,9 @@ class HeroText extends StatelessWidget {
           style: AthenaTextStyle.small,
         ),
 
-        const SizedBox(height: 32),
+        const SizedBox(height: 24),
 
-        
-        HeroButtons(),
+        const HeroButtons(),
       ],
     );
   }

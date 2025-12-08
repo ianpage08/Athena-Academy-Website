@@ -15,21 +15,21 @@ class HeroBackground extends StatelessWidget {
             left: -80,
             child: _Blob(
               size: 420,
-              color: AthenaColors.primaryUltraLight.withOpacity(0.35),
+              color: AthenaColors.primaryUltraLight.withOpacity(0.10),
             ),
           ),
 
-          // Blob azul (direita)
+          // Blob azul (direita inferior)
           Positioned(
             bottom: -150,
             right: -120,
             child: _Blob(
               size: 460,
-              color: AthenaColors.accentUltraLight.withOpacity(0.32),
+              color: AthenaColors.accentUltraLight.withOpacity(0.06),
             ),
           ),
 
-          // Glow difuso orgânico (esquerda)
+          // Glow orgânico (esquerda)
           Positioned(
             top: 160,
             left: -40,
@@ -39,7 +39,7 @@ class HeroBackground extends StatelessWidget {
             ),
           ),
 
-          // Glow difuso secundário (harmonização)
+          // Glow orgânico secundário
           Positioned(
             top: 280,
             left: 200,
@@ -48,13 +48,22 @@ class HeroBackground extends StatelessWidget {
               color: AthenaColors.primarySoft.withOpacity(0.08),
             ),
           ),
+
+          // Glow claro atrás do texto (contraste premium)
+          Positioned(
+            top: 140,
+            right: -80,
+            child: _DiffuseGlow(
+              size: 420,
+              color: Colors.white.withOpacity(0.05),
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-// Blob grande com blur suave
 class _Blob extends StatelessWidget {
   final double size;
   final Color color;
@@ -69,20 +78,12 @@ class _Blob extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
-        boxShadow: [
-          // efeito de “volume”
-          BoxShadow(
-            color: color,
-            blurRadius: 180,
-            spreadRadius: 60,
-          ),
-        ],
+        boxShadow: [BoxShadow(color: color, blurRadius: 180, spreadRadius: 60)],
       ),
     );
   }
 }
 
-// Glow orgânico difuso
 class _DiffuseGlow extends StatelessWidget {
   final double size;
   final Color color;
@@ -97,10 +98,7 @@ class _DiffuseGlow extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(size),
         gradient: RadialGradient(
-          colors: [
-            color,
-            Colors.transparent,
-          ],
+          colors: [color, Colors.transparent],
           radius: 0.85,
         ),
       ),

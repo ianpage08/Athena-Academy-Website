@@ -11,11 +11,13 @@ class HeroSection extends StatelessWidget {
       width: double.infinity,
       child: Stack(
         children: [
-          /// 🔮 Camada de efeitos IA
-          const HeroBackground(),
-          const HeroCard(),
-
-          /// ❄ Card principal com glass + conteúdo
+          HeroBackground(),
+          Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 1600),
+              child: HeroCard(),
+            ),
+          ),
         ],
       ),
     );

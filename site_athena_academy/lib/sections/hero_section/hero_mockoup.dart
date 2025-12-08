@@ -6,14 +6,15 @@ class HeroMockup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       decoration: const BoxDecoration(
         boxShadow: [
+          // sombra profunda
           BoxShadow(
             color: Color.fromARGB(80, 0, 0, 0),
             blurRadius: 90,
             offset: Offset(0, 50),
           ),
+          // glow branco suave
           BoxShadow(
             color: Color.fromARGB(40, 255, 255, 255),
             blurRadius: 140,
@@ -21,7 +22,10 @@ class HeroMockup extends StatelessWidget {
           ),
         ],
       ),
-      child: Image.asset('assets/imagens/hero_1.png', width: 450),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Image.asset('assets/imagens/hero_1.png', width: 600),
+      ),
     );
   }
 }

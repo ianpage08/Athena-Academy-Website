@@ -7,11 +7,11 @@ class AthenaTextStyle {
   // DISPLAY — Hero principal
 
   static const TextStyle display = TextStyle(
-    fontSize: 64,
-    fontWeight: FontWeight.w600,
+    fontSize: 52,
+    fontWeight: FontWeight.w100,
+    letterSpacing: -1.2,
     height: 1.1,
-    letterSpacing: -1,
-    color: AthenaColors.textPrimary,
+    color: Colors.white,
   );
 
   // Grande, forte,
@@ -21,7 +21,7 @@ class AthenaTextStyle {
     fontWeight: FontWeight.w600,
     height: 1.25,
     letterSpacing: -0.2,
-    color: AthenaColors.textPrimary,
+    color: Color.fromARGB(255, 255, 255, 255),
   );
 
   // SUBTITLE — Subtítulos explicativos e destaques
@@ -31,7 +31,7 @@ class AthenaTextStyle {
     fontSize: 20,
     fontWeight: FontWeight.w500,
     height: 1.45,
-    color: AthenaColors.textSecondary,
+    color: Color.fromARGB(255, 214, 214, 214),
   );
 
   // BODY — Texto padrão
@@ -41,7 +41,7 @@ class AthenaTextStyle {
     fontSize: 16,
     fontWeight: FontWeight.w400,
     height: 1.55,
-    color: AthenaColors.textPrimary,
+    color: Color.fromARGB(255, 252, 252, 252),
   );
 
   // SMALL — Informações secundárias / labels
@@ -51,7 +51,7 @@ class AthenaTextStyle {
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 1.4,
-    color: AthenaColors.textSecondary,
+    color: Color.fromARGB(255, 212, 212, 212),
   );
 
   // -----------------------------------------
@@ -74,6 +74,6 @@ class AthenaTextStyle {
     fontSize: 18,
     fontWeight: FontWeight.w600,
     letterSpacing: 0.3,
-    color: AthenaColors.textPrimary,
+    color: Color.fromARGB(255, 192, 192, 192),
   );
 }

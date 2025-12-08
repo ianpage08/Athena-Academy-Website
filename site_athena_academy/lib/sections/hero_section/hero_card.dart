@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site_athena_academy/sections/hero_section/hero_mockoup.dart';
+
 import 'hero_text.dart';
 
 class HeroCard extends StatelessWidget {
@@ -10,10 +11,8 @@ class HeroCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(32),
       child: Container(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 48),
         decoration: _prismGlass,
-
-        /// Layout responsivo do hero
         child: LayoutBuilder(
           builder: (context, constraints) {
             final bool mobile = constraints.maxWidth < 900;
@@ -23,11 +22,16 @@ class HeroCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(flex: mobile ? 0 : 1, child: const HeroMockup()),
+                Flexible(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 100),
+                    child: const HeroMockup(),
+                  ),
+                ),
 
-                /// Texto
-                Expanded(
-                  flex: mobile ? 0 : 1,
+                Flexible(
+                  flex: 1,
                   child: Padding(
                     padding: EdgeInsets.only(
                       right: mobile ? 0 : 32,
@@ -36,8 +40,6 @@ class HeroCard extends StatelessWidget {
                     child: const HeroText(),
                   ),
                 ),
-
-                /// Mockup flutuando (IA MAX)
               ],
             );
           },
@@ -47,15 +49,12 @@ class HeroCard extends StatelessWidget {
   }
 }
 
-/// ❄ Efeito Glass Prismático Avançado
 final BoxDecoration _prismGlass = BoxDecoration(
   borderRadius: BorderRadius.circular(32),
   color: Colors.white.withOpacity(0.10),
 
-  /// Borda luminosa prismática
-  border: Border.all(color: Colors.white.withOpacity(0.28), width: 1.2),
+  border: Border.all(color: Colors.white.withOpacity(0.06), width: 1.2),
 
-  /// Sombra premium IA
   boxShadow: [
     BoxShadow(
       color: Colors.black.withOpacity(0.08),
@@ -64,7 +63,7 @@ final BoxDecoration _prismGlass = BoxDecoration(
     ),
   ],
 
-  /// Gradiente prismático leve
+  // Gradiente prismático leve
   gradient: LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,

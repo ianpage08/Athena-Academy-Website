@@ -14,10 +14,13 @@ class HeroButtons extends StatelessWidget {
             minimumSize: const Size(150, 50),
             backgroundColor: AthenaColors.accent,
             foregroundColor: Colors.white,
+            elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
+            overlayColor: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.12),
           ),
+
           onPressed: () {},
           label: const Text('Baixar App Demo'),
           icon: const Icon(Icons.download),
@@ -26,11 +29,13 @@ class HeroButtons extends StatelessWidget {
         ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(150, 50),
-            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black87,
+            elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
+            overlayColor: Colors.black.withOpacity(0.08),
           ),
           onPressed: () {
             // Ação do botão 2
