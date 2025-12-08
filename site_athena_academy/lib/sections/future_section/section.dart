@@ -1,81 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:site_athena_academy/sections/ssj/widgets/card_item.dart';
+import 'package:site_athena_academy/sections/future_section/widgets/card_item.dart';
 
-class Section extends StatelessWidget {
-  const Section({super.key});
+
+class FutureSection extends StatelessWidget {
+  const FutureSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(height: 40),
+        const SizedBox(height: 50),
 
-        // TÍTULO
         Text(
           'O Futuro do Athena Academy',
           style: TextStyle(
-            fontSize: 34,
+            fontSize: 36,
             fontWeight: FontWeight.w800,
-            color: Colors.black.withOpacity(0.85),
+            color: Colors.white.withOpacity(0.90),
           ),
         ),
 
-        const SizedBox(height: 10),
+        const SizedBox(height: 12),
 
-        // SUBTÍTULO
         Text(
           'Novos recursos, mais automação e uma plataforma cada vez mais inteligente.',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 17, color: Colors.black.withOpacity(0.55)),
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white.withOpacity(0.60),
+          ),
         ),
 
         const SizedBox(height: 40),
 
-        // GRID FUTURISTA
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Wrap(
-            spacing: 24,
-            runSpacing: 24,
+            spacing: 28,
+            runSpacing: 28,
             alignment: WrapAlignment.center,
             children: const [
-              Cardw(
+              FutureCard(
                 icon: Icons.security,
                 title: 'Segurança avançada com autenticação de dois fatores',
               ),
-              Cardw(icon: Icons.search, title: 'Login com Google e Apple'),
-              Cardw(
+              FutureCard(
+                icon: Icons.search,
+                title: 'Login com Google e Apple',
+              ),
+              FutureCard(
                 icon: Icons.devices,
                 title: 'Portal web completo para todos os perfis',
               ),
-              Cardw(
+              FutureCard(
                 icon: Icons.chat_bubble_outline,
                 title: 'Chat interno entre professores, alunos e pais',
               ),
 
-              Cardw(
+              FutureCard(
                 icon: Icons.analytics_outlined,
                 title: 'Relatórios avançados e análises de desempenho',
               ),
-              Cardw(
+              FutureCard(
                 icon: Icons.account_balance_wallet,
                 title: 'Sistema financeiro integrado e automatizado',
               ),
-              Cardw(
+              FutureCard(
                 icon: Icons.computer,
                 title: 'Avaliações online com correção automática',
               ),
-              Cardw(
+              FutureCard(
                 icon: Icons.phone_android,
                 title: 'Aplicativo mobile para todas as plataformas',
               ),
 
-              Cardw(
+              FutureCard(
                 icon: Icons.calendar_month,
                 title: 'Agenda inteligente com lembretes automáticos',
               ),
-              Cardw(
+              FutureCard(
                 icon: Icons.hub,
                 title: 'Integração com outras plataformas educacionais',
               ),
@@ -83,7 +87,7 @@ class Section extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 50),
+        const SizedBox(height: 80),
       ],
     );
   }
