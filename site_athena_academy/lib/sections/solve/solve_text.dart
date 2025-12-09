@@ -53,8 +53,8 @@ class SolveText extends StatelessWidget {
 
           // Lista de desafios
           Wrap(
-            spacing: 70,
-            runSpacing: 50,
+            spacing: 20,
+            runSpacing: 30,
             children: const [
               ChallengeBadge(
                 number: 1,

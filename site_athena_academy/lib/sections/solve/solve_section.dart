@@ -26,7 +26,7 @@ class _SolveSectionState extends State<SolveSection> {
                     children: [
                       Expanded(flex: 1, child: _buildImage()),
                       Expanded(flex: 1, child: SolveText()),
-                      const SizedBox(width: 80),
+                      const SizedBox(width: 90),
                     ],
                   ),
                 );
@@ -37,7 +37,7 @@ class _SolveSectionState extends State<SolveSection> {
 
   Widget _buildImage() {
     return Center(
-      child: Image.asset('assets/imagens/icon_solve_3d.png', width: 420),
+      child: Image.asset('assets/imagens/icon_solve_3d.png', width: 500),
     );
   }
 }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'package:site_athena_academy/sections/challenges/challenge_text.dart';
+import 'package:site_athena_academy/widgets/animated_scroll.dart';
+
+import 'package:site_athena_academy/widgets/parallax_image.dart';
 
 class ChallengeSection extends StatelessWidget {
-  const ChallengeSection({super.key});
+  final ScrollController scrollController;
+
+  const ChallengeSection({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -16,29 +20,31 @@ class ChallengeSection extends StatelessWidget {
           return isMobile
               ? Column(
                   children: [
-                    _buildLeftImage(),
+                    Image.asset('assets/imagens/icone_challenge_3d.png'),
+
                     const SizedBox(height: 40),
-                    ChallengeText(),
+                    const ChallengeText(),
                   ],
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-
                   children: [
-                    const SizedBox(width: 100),
-                    Expanded(flex: 2, child: ChallengeText()),
-
-                    Expanded(flex: 1, child: _buildLeftImage()),
+                    const Expanded(flex: 2, child: ChallengeText()),
+                    Expanded(
+                      flex: 1,
+                      child: Center(
+                        child: AnimatedOnScroll(
+                          child: SoftRevealImage(
+                            asset: 'assets/imagens/icone_challenge_3d.png',
+                            width: 500,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 );
         },
       ),
-    );
-  }
-
-  Widget _buildLeftImage() {
-    return Center(
-      child: Image.asset('assets/imagens/icone_challenge_3d.png', width: 420),
     );
   }
 }

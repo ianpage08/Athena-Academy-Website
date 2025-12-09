@@ -16,6 +16,8 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  final ScrollController _ontroller = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,22 +28,27 @@ class _AppState extends State<App> {
       ),
       body: AppBackground(
         child: SingleChildScrollView(
+          controller: _ontroller,
           child: Padding(
             padding: const EdgeInsets.all(0),
             child: Column(
               children: [
                 const SizedBox(height: 100),
-                HeroSection(),
+                const HeroSection(),
 
-                ChallengeSection(),
-                Divider(),
-                SolveSection(),
-                Divider(),
+                // agora sim o parallax funciona
+                ChallengeSection(scrollController: _ontroller),
+
+                const Divider(),
+                const SolveSection(),
+                const Divider(),
                 const SizedBox(height: 20),
-                FeaturesSection(),
-                Divider(),
+
+                const FeaturesSection(),
+                const Divider(),
                 const SizedBox(height: 50),
-                FutureSection(),
+
+                const FutureSection(),
               ],
             ),
           ),

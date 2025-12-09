@@ -1,86 +1,96 @@
 import 'package:flutter/material.dart';
 import 'package:site_athena_academy/core/constants/colors.dart';
 
-class ChallengeBadge extends StatelessWidget {
+class ChallengeBadge extends StatefulWidget {
   final int number;
   final String text;
   final String description;
+  final Duration delay;
 
   const ChallengeBadge({
     super.key,
     required this.number,
     required this.text,
-    this.description = '',
+    required this.description,
+    this.delay = Duration.zero,
   });
 
   @override
+  State<ChallengeBadge> createState() => _ChallengeBadgeState();
+}
+
+class _ChallengeBadgeState extends State<ChallengeBadge> {
+  bool _isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 400,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // BADGE NUMERADO
-          Container(
-            width: 52,
-            height: 52,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: AthenaColors.accentGradient,
-              boxShadow: [
-                BoxShadow(
-                  color: AthenaColors.accent.withOpacity(0.35),
-                  blurRadius: 18,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        transform: Matrix4.identity()..scale(_isHovered ? 1.04 : 1.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: AthenaColors.accent.withOpacity(_isHovered ? 0.25 : 0.10),
+              blurRadius: _isHovered ? 40 : 20,
+              spreadRadius: _isHovered ? 3 : 0,
             ),
-            child: Center(
-              child: Text(
-                number.toString(),
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+          ],
+        ),
+
+        child: Container(
+          width: 260,
+          padding: const EdgeInsets.all(16),
+
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // número com animação pop
+              AnimatedScale(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOutBack,
+                scale: _isHovered ? 1.12 : 1.0,
+
+                child: CircleAvatar(
+                  radius: 22,
+                  backgroundColor: AthenaColors.accent.withOpacity(0.9),
+                  child: Text(
+                    widget.number.toString(),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
 
-          const SizedBox(width: 16),
+              const SizedBox(height: 16),
 
-          // TEXTO
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // TÍTULO
-                Text(
-                  text,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                    height: 1.2,
-                  ),
+              Text(
+                widget.text,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
                 ),
+              ),
+              const SizedBox(height: 6),
 
-                const SizedBox(height: 6),
-
-                // DESCRIÇÃO
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 14,
-                    height: 1.45,
-                    color: Colors.white.withOpacity(0.75),
-                  ),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.75),
+                  height: 1.3,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
