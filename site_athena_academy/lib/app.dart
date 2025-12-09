@@ -37,17 +37,17 @@ class _AppState extends State<App> {
                 const SizedBox(height: 100),
                 const HeroSection(),
 
-                // agora sim o parallax funciona
+                
                 ChallengeSection(scrollController: _ontroller),
+                const SizedBox(height: 40),
 
-                const Divider(),
                 const SolveSection(),
-                const Divider(),
-                const SizedBox(height: 20),
+
+                const SizedBox(height: 40),
 
                 const FeaturesSection(),
-                const Divider(),
-                const SizedBox(height: 50),
+
+                const SizedBox(height: 60),
 
                 const FutureSection(),
 

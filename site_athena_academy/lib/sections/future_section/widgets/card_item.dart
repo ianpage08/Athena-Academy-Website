@@ -24,7 +24,7 @@ class _FutureCardState extends State<FutureCard> {
         width: 360,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(
             colors: [
               Colors.white.withOpacity(0.10),

@@ -9,53 +9,53 @@ class HeroBackground extends StatelessWidget {
     return Positioned.fill(
       child: Stack(
         children: [
-          // Blob lilás (esquerda)
+          /// ⭐ Blob roxo suave (esquerda)
           Positioned(
-            top: -120,
-            left: -80,
+            top: -140,
+            left: -100,
             child: _Blob(
               size: 420,
-              color: AthenaColors.primaryUltraLight.withOpacity(0.05),
+              color: AthenaColors.primarySoft.withOpacity(0.01),
             ),
           ),
 
-          // Blob azul (direita inferior)
+          /// ⭐ Blob azul suave (direita inferior)
           Positioned(
-            bottom: -150,
-            right: -120,
+            bottom: -160,
+            right: -130,
             child: _Blob(
-              size: 460,
-              color: AthenaColors.accentUltraLight.withOpacity(0.05),
+              size: 480,
+              color: AthenaColors.accentSoft.withOpacity(0.02),
             ),
           ),
 
-          // Glow orgânico (esquerda)
+          /// ⭐ Glow azul-violeta (esquerda)
           Positioned(
             top: 160,
             left: -40,
             child: _DiffuseGlow(
               size: 520,
-              color: AthenaColors.accentSoft.withOpacity(0.12),
+              color: AthenaColors.accent.withOpacity(0.10),
             ),
           ),
 
-          // Glow orgânico secundário
+          /// ⭐ Glow secundário roxo (meio-esquerda)
           Positioned(
-            top: 280,
-            left: 200,
+            top: 300,
+            left: 180,
             child: _DiffuseGlow(
-              size: 360,
-              color: AthenaColors.primarySoft.withOpacity(0.08),
+              size: 380,
+              color: AthenaColors.primaryUltraLight.withOpacity(0.06),
             ),
           ),
 
-          // Glow claro atrás do texto (contraste premium)
+          /// ⭐ Glow muito suave atrás do texto (contraste premium)
           Positioned(
-            top: 140,
-            right: -80,
+            top: 120,
+            right: -60,
             child: _DiffuseGlow(
               size: 420,
-              color: Colors.white.withOpacity(0.05),
+              color: Colors.white.withOpacity(0.03),
             ),
           ),
         ],
@@ -78,7 +78,13 @@ class _Blob extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
-        boxShadow: [BoxShadow(color: color, blurRadius: 180, spreadRadius: 60)],
+        boxShadow: [
+          BoxShadow(
+            color: color.withOpacity(0.4),
+            blurRadius: 150,
+            spreadRadius: 50,
+          ),
+        ],
       ),
     );
   }
