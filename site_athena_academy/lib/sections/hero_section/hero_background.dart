@@ -15,7 +15,7 @@ class HeroBackground extends StatelessWidget {
             left: -80,
             child: _Blob(
               size: 420,
-              color: AthenaColors.primaryUltraLight.withOpacity(0.10),
+              color: AthenaColors.primaryUltraLight.withOpacity(0.05),
             ),
           ),
 
@@ -25,7 +25,7 @@ class HeroBackground extends StatelessWidget {
             right: -120,
             child: _Blob(
               size: 460,
-              color: AthenaColors.accentUltraLight.withOpacity(0.06),
+              color: AthenaColors.accentUltraLight.withOpacity(0.05),
             ),
           ),
 

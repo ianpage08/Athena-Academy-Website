@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site_athena_academy/widgets/animated_scroll.dart';
-import 'package:site_athena_academy/widgets/slide_right';
+
 
 class FeatureShowcase extends StatelessWidget {
   const FeatureShowcase({super.key});

@@ -51,7 +51,7 @@ class HeroCard extends StatelessWidget {
 
 final BoxDecoration _prismGlass = BoxDecoration(
   borderRadius: BorderRadius.circular(32),
-  color: Colors.white.withOpacity(0.10),
+  color: Colors.white.withOpacity(0.05),
 
   border: Border.all(color: Colors.white.withOpacity(0.06), width: 1.2),
 
@@ -67,6 +67,6 @@ final BoxDecoration _prismGlass = BoxDecoration(
   gradient: LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [Colors.white.withOpacity(0.25), Colors.white.withOpacity(0.08)],
+    colors: [Colors.white.withOpacity(0.1), Colors.white.withOpacity(0.08)],
   ),
 );

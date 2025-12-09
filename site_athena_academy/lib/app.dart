@@ -4,6 +4,7 @@ import 'package:site_athena_academy/sections/challenges/challenge_section.dart';
 import 'package:site_athena_academy/sections/features/features_section.dart';
 import 'package:site_athena_academy/sections/header/header_section.dart';
 import 'package:site_athena_academy/sections/hero_section/hero_section.dart';
+import 'package:site_athena_academy/sections/road_map/road_map_section.dart';
 import 'package:site_athena_academy/sections/solve/solve_section.dart';
 import 'package:site_athena_academy/sections/future_section/section.dart';
 import 'package:site_athena_academy/theme/backgroud.dart';
@@ -49,6 +50,8 @@ class _AppState extends State<App> {
                 const SizedBox(height: 50),
 
                 const FutureSection(),
+
+                RoadmapSection(),
               ],
             ),
           ),

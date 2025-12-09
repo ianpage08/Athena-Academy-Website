@@ -46,7 +46,7 @@ class _HeroMockupState extends State<HeroMockup>
           boxShadow: [
             // sombra profunda
             BoxShadow(
-              color: Color.fromARGB(80, 0, 0, 0),
+              color: Color.fromARGB(34, 0, 0, 0),
               blurRadius: 90,
               offset: Offset(0, 50),
             ),
@@ -60,7 +60,7 @@ class _HeroMockupState extends State<HeroMockup>
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: Image.asset('assets/imagens/hero_1.png', width: 600),
+          child: Image.asset('assets/imagens/hero_4.png', width: 700),
         ),
       ),
     );
