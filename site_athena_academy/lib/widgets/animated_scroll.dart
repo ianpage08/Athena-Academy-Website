@@ -3,14 +3,19 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimatedOnScroll extends StatefulWidget {
   final Widget child;
-  final double offset;      // deslocamento Y
-  final Duration duration;  // duração da animação
-  final Duration delay;     // delay opcional
+
+  // deslocamentos iniciais
+  final double offsetX;     // horizontal (esquerda/direita)
+  final double offsetY;     // vertical (cima/baixo)
+
+  final Duration duration;
+  final Duration delay;
 
   const AnimatedOnScroll({
     super.key,
     required this.child,
-    this.offset = 40,
+    this.offsetX = 0,                // novo
+    this.offsetY = 40,               // já existia
     this.duration = const Duration(milliseconds: 900),
     this.delay = Duration.zero,
   });
@@ -21,9 +26,11 @@ class AnimatedOnScroll extends StatefulWidget {
 
 class _AnimatedOnScrollState extends State<AnimatedOnScroll>
     with SingleTickerProviderStateMixin {
-
+  
   late AnimationController _controller;
   late Animation<double> _opacity;
+
+  late Animation<double> _slideX;   // novo
   late Animation<double> _slideY;
 
   bool _isVisible = false;
@@ -32,19 +39,20 @@ class _AnimatedOnScrollState extends State<AnimatedOnScroll>
   void initState() {
     super.initState();
 
-    // controle geral da animação
     _controller = AnimationController(
       vsync: this,
       duration: widget.duration,
     );
 
-    // anima opacidade de 0 → 1
     _opacity = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeOut),
     );
 
-    // anima deslocamento (desce 40px → 0)
-    _slideY = Tween(begin: widget.offset, end: 0.0).animate(
+    _slideX = Tween(begin: widget.offsetX, end: 0.0).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic),
+    );
+
+    _slideY = Tween(begin: widget.offsetY, end: 0.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic),
     );
   }
@@ -54,10 +62,15 @@ class _AnimatedOnScrollState extends State<AnimatedOnScroll>
 
     _isVisible = true;
 
-    // espera o delay definido
     await Future.delayed(widget.delay);
 
     _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -75,7 +88,7 @@ class _AnimatedOnScrollState extends State<AnimatedOnScroll>
           return Opacity(
             opacity: _opacity.value,
             child: Transform.translate(
-              offset: Offset(0, _slideY.value),
+              offset: Offset(_slideX.value, _slideY.value),
               child: child,
             ),
           );

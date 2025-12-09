@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:site_athena_academy/sections/solve/solve_text.dart';
 import 'package:site_athena_academy/theme/padding.dart';
+import 'package:site_athena_academy/widgets/animated_scroll.dart';
 import 'package:site_athena_academy/widgets/glass_container.dart';
+import 'package:site_athena_academy/widgets/soft_reavel_image.dart';
 
 class SolveSection extends StatefulWidget {
   const SolveSection({super.key});
@@ -37,7 +39,12 @@ class _SolveSectionState extends State<SolveSection> {
 
   Widget _buildImage() {
     return Center(
-      child: Image.asset('assets/imagens/icon_solve_3d.png', width: 500),
+      child: AnimatedOnScroll(
+        child: SoftRevealImage(
+          asset: 'assets/imagens/icon_solve_3d.png',
+          width: 500,
+        ),
+      ),
     );
   }
 }

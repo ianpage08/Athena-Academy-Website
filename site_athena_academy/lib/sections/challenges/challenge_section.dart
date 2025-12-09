@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:site_athena_academy/sections/challenges/challenge_text.dart';
 import 'package:site_athena_academy/widgets/animated_scroll.dart';
 
-import 'package:site_athena_academy/widgets/parallax_image.dart';
+import 'package:site_athena_academy/widgets/soft_reavel_image.dart';
 
 class ChallengeSection extends StatelessWidget {
   final ScrollController scrollController;

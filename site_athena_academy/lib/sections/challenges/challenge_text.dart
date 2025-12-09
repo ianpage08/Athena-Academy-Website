@@ -12,8 +12,6 @@ class ChallengeText extends StatefulWidget {
 
 class _ChallengeTextState extends State<ChallengeText>
     with SingleTickerProviderStateMixin {
-  
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,38 +19,44 @@ class _ChallengeTextState extends State<ChallengeText>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Desafios dos Portais Atuais",
-            style: TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.w800,
-              color: const Color.fromARGB(255, 255, 255, 255),
+          AnimatedOnScroll(
+            child: Text(
+              "Desafios dos Portais Atuais",
+              style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.w800,
+                color: const Color.fromARGB(255, 255, 255, 255),
+              ),
             ),
           ),
           const SizedBox(height: 8),
 
           // linha estilizada
-          Container(
-            width: 260,
-            height: 3,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [Colors.white.withOpacity(0.85), AthenaColors.accent],
+          AnimatedOnScroll(
+            child: Container(
+              width: 260,
+              height: 3,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Colors.white.withOpacity(0.85), AthenaColors.accent],
+                ),
               ),
             ),
           ),
 
           const SizedBox(height: 20),
 
-          Text(
-            "Principais problemas enfrentados hoje por escolas, "
-            "professores, alunos e responsáveis.",
-            style: TextStyle(
-              fontSize: 16,
-              color: const Color.fromARGB(213, 255, 255, 255),
-              height: 1.4,
+          AnimatedOnScroll(
+            child: Text(
+              "Principais problemas enfrentados hoje por escolas, "
+              "professores, alunos e responsáveis.",
+              style: TextStyle(
+                fontSize: 16,
+                color: const Color.fromARGB(213, 255, 255, 255),
+                height: 1.4,
+              ),
             ),
           ),
 
